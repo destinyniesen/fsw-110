@@ -6,16 +6,18 @@ var newPar=document.createElement('p');
 newPar.textContent="All of this was created with javascript";
 document.body.appendChild(newPar);
 
-var arr=["I am learning to use javascript", "It is allowing me to add this list", "Now my website runs properly"];
-var container=document.createElement('div');
+function makeList(){
+let arr=["I am learning to use javascript", "It is allowing me to add this list", "Now my website runs properly"];
+const container=document.createElement('div');
 document.body.appendChild(container);
-var newList = document.createElement('ol');
-document.body.appendChild(newList);
-let list=document.getElementById("newList");
+const newList = document.createElement('ol');
 
     for (i = 0; i <= arr.length - 1; i++) {
         const listItems = document.createElement('li');
-        listItems.textContent = arr[i];	                   	
-        document.list.appendChild(listItems);		
+        listItems.appendChild(document.createTextNode(arr[i]));
+        newList.appendChild(listItems);		
     }
-    document.container.appendChild(list);	
+    container.appendChild(newList);	
+    return newList;
+}
+console.log(makeList());
